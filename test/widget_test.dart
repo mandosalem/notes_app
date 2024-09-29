@@ -8,7 +8,6 @@
 import 'package:flutter/material.dart';
 // ignore: duplicate_import
 import 'package:flutter_module_3/main.dart';
-import 'package:flutter_module_3/main.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
