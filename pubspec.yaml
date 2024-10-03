@@ -34,6 +34,8 @@ dependencies:
   json_annotation: ^4.0.1
   logging: ^1.2.0
   hive_flutter: any
+  flutter_bloc: ^8.1.6
+  bloc: ^8.1.4
 
 dev_dependencies:
   flutter_test:
