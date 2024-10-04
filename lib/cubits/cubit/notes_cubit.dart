@@ -1,3 +1,5 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:bloc/bloc.dart';
 import 'package:flutter_module_3/models/note_model.dart';
 import 'package:flutter_module_3/widgets/constants.dart';

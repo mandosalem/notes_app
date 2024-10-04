@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_module_3/models/note_model.dart';
 import 'package:flutter_module_3/views/edit_note_view.dart';
 
 class NotesItem extends StatelessWidget {
-  const NotesItem({super.key});
-
+  const NotesItem({super.key, required this.note});
+  final NoteModel note;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -18,25 +19,25 @@ class NotesItem extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.only(top: 24, bottom: 24, left: 16),
         decoration: BoxDecoration(
-          color: const Color(0xffFFCD7A),
+          color: Color(note.color),
           borderRadius: BorderRadius.circular(16),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             ListTile(
-              title: const Text(
-                'Flutter tips',
-                style: TextStyle(
+              title: Text(
+                note.title,
+                style: const TextStyle(
                   color: Colors.black,
                   fontSize: 32,
                 ),
               ),
-              subtitle: const Padding(
-                padding: EdgeInsets.only(top: 16),
+              subtitle: Padding(
+                padding: const EdgeInsets.only(top: 16),
                 child: Text(
-                  'build your career with meamen',
-                  style: TextStyle(
+                  note.subtitle,
+                  style: const TextStyle(
                     color: Colors.black,
                     fontSize: 20,
                   ),
@@ -49,11 +50,11 @@ class NotesItem extends StatelessWidget {
                 iconSize: 26,
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.only(right: 24, bottom: 16),
+            Padding(
+              padding: const EdgeInsets.only(right: 24, bottom: 16),
               child: Text(
-                'May21, 2022',
-                style: TextStyle(color: Colors.black),
+                note.date,
+                style: const TextStyle(color: Colors.black),
               ),
             ),
           ],
