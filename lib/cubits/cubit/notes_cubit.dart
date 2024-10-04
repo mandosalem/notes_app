@@ -12,8 +12,12 @@ class NotesCubit extends Cubit<NotesState> {
   NotesCubit() : super(NotesInitial());
 
   List<NoteModel>? notes;
+
+  // دالة لجلب جميع الملاحظات
   fetchAllNotes() async {
-    var notesBox = Hive.box<NoteModel>(kNotesBox);
-    notes = notesBox.values.toList();
+    var notesBox = Hive.box<NoteModel>(kNotesBox); // فتح الصندوق
+    notes = notesBox.values.toList(); // جلب القيم من الصندوق
+    emit(NotesLoaded(notes)); // إرسال الحالة المحملة
   }
 }
+
