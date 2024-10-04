@@ -1,5 +1,7 @@
 
 
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 import 'package:flutter_module_3/widgets/constants.dart';
 
@@ -33,6 +35,7 @@ class CustomTextField extends StatelessWidget {
     );
   }
 
+  // ignore: avoid_types_as_parameter_names
   OutlineInputBorder buildBorder([Color]) {
     return OutlineInputBorder(
         borderRadius: BorderRadius.circular(8),

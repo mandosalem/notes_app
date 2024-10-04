@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter_module_3/models/note_model.dart';
 import 'package:flutter_module_3/widgets/constants.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+// ignore: depend_on_referenced_packages
 import 'package:meta/meta.dart';
 
 part 'add_notes_cubit_state.dart';
