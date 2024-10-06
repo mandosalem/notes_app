@@ -1,23 +1,26 @@
-
-
-// ignore_for_file: non_constant_identifier_names
-
 import 'package:flutter/material.dart';
 import 'package:flutter_module_3/widgets/constants.dart';
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField({super.key, required this.hint, this.maxLines = 1, this.onSaved});
+  const CustomTextField(
+      {super.key,
+      required this.hint,
+      this.maxLines = 1,
+      this.onSaved,
+      this.onChanged});
   final String hint;
   final int maxLines;
-  final void Function(String?)?onSaved;
+  final void Function(String?)? onSaved;
+  final Function(String)? onChanged;
   @override
   Widget build(BuildContext context) {
-    return  TextFormField(
+    return TextFormField(
+      onChanged: onChanged,
       onSaved: onSaved,
       validator: (value) {
-        if(value?.isEmpty??true){
+        if (value?.isEmpty ?? true) {
           return 'Field is required';
-        }else{
+        } else {
           return null;
         }
       },
@@ -25,9 +28,7 @@ class CustomTextField extends StatelessWidget {
       maxLines: maxLines,
       decoration: InputDecoration(
         hintText: hint,
-        hintStyle: const TextStyle(
-          color: kPrimaryColor
-        ),
+        hintStyle: const TextStyle(color: kPrimaryColor),
         border: buildBorder(),
         enabledBorder: buildBorder(),
         focusedBorder: buildBorder(kPrimaryColor),
@@ -38,10 +39,8 @@ class CustomTextField extends StatelessWidget {
   // ignore: avoid_types_as_parameter_names
   OutlineInputBorder buildBorder([Color]) {
     return OutlineInputBorder(
-        borderRadius: BorderRadius.circular(8),
-        borderSide: const BorderSide(
-          color: Colors.white
-        ),
-      );
+      borderRadius: BorderRadius.circular(8),
+      borderSide: const BorderSide(color: Colors.white),
+    );
   }
 }
